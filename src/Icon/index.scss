@@ -1,0 +1,27 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon-spin {
+  animation: spin 1.5s linear infinite;
+}
+
+// [class*='icon-rotate-'] {
+//   transform: rotate(var(--rotate-deg, 0deg));
+// }
+
+@for $i from 0 through 360 {
+  .icon-rotate-#{$i} {
+    transform: rotate(#{$i}deg);
+  }
+}
